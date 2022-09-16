@@ -115,18 +115,32 @@ const unionArrays = arrayInicialCelcius.concat(arrayInicialFahrenheit)
 const unionArrays2 = unionArrays.concat(arrayInicialKelvin)
 console.log(unionArrays2)
 const cantidadRegistros = unionArrays2.length
-const cantidadRegistros2 = cantidadRegistros - 1
 if (cantidadRegistros != 0) {
     do {
-        selector = prompt('Hay en total ' + cantidadRegistros + ' registros, Ingrese el Registro que desea vizualizar iniciando con 0 como primer registro, si desea terminar ingrese la combinacion x' )
-        if (selector > cantidadRegistros2){
-            alert('El registro no existe, hay en total ' + cantidadRegistros + ' registros, Ingrese el Registro que desea vizualizar iniciando con 0 como primer registro')
-            continue;
+        selector = parseInt(prompt('Hay en total ' + cantidadRegistros + ' registros, Ingrese 1 para listar los registros que contienen °C, Ingrese 2 para listar los registros que contienen °F, Ingrese 3 para listar los registros que contienen °K, ingresar otro valor para Salir de la Visualizacion'))
+        switch (selector) {
+            case 1:
+                const celsiusFind1 = unionArrays2.filter((element, index) => {
+                    return element.tipo1 === '°C';
+                })
+                console.log(celsiusFind1);
+                continue;
+            case 2:
+                const celsiusFind2 = unionArrays2.filter((element, index) => {
+                    return element.tipo1 === '°F';
+                })
+                console.log(celsiusFind2);
+                continue;
+            case 3:
+                const celsiusFind3 = unionArrays2.filter((element, index) => {
+                    return element.tipo2 === '°K';
+                })
+                console.log(celsiusFind3);
+                continue;
+            default:
+                alert('Fin de la Visualizacion');
+                selector = false
         }
-        if (selector == 'x'){
-            break;
-        }else{
-            console.log(unionArrays2[selector])
-        }
-    } while (selector != 'x')
+    }
+    while (selector)
 }
