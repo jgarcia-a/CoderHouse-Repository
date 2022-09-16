@@ -8,11 +8,11 @@ function toCelsius(fahrenheit) {
     arrayInicialFahrenheit.push(new Temperatura(fahrenheit, '°F', 'a', tempCelcius, '°C'))
     relacionTemperaturaCelcius(tempCelcius);
 }
-function toKelvin1(celsius){
+function toKelvin1(celsius) {
     let tempKelvin = celsius + 273.15;
     arrayInicialKelvin.push(new Temperatura(celsius, '°C', 'a', tempKelvin, '°K'))
 }
-function toKelvin2(fahrenheit){
+function toKelvin2(fahrenheit) {
     let tempKelvin = ((fahrenheit - 32) / 1.8) + 273.15;
     arrayInicialKelvin.push(new Temperatura(fahrenheit, '°F', 'a', tempKelvin, '°K'))
 }
@@ -69,7 +69,7 @@ class Temperatura {
 }
 const arrayInicialCelcius = []
 const arrayInicialFahrenheit = []
-const arrayInicialKelvin =[]
+const arrayInicialKelvin = []
 let selector
 do {
     selector = parseInt(prompt('ingresar el tipo de temperatura 1 para °C o 2 para °F - para salir 3'))
@@ -106,8 +106,27 @@ if (arrayInicialKelvin.length != 0) {
         alert('Temperaturas comvertidas a °K:' + ' ' + tempe.temperaturaOriginal + ' ' + tempe.tipo1 + ' ' + tempe.conector + ' ' + tempe.temperaturaConvertida + ' ' + tempe.tipo2)
 }
 
-alert('¡Programa terminado!')
-
+alert('Conversiones terminadas!')
 console.log(arrayInicialCelcius)
 console.log(arrayInicialFahrenheit)
 console.log(arrayInicialKelvin)
+
+const unionArrays = arrayInicialCelcius.concat(arrayInicialFahrenheit)
+const unionArrays2 = unionArrays.concat(arrayInicialKelvin)
+console.log(unionArrays2)
+const cantidadRegistros = unionArrays2.length
+const cantidadRegistros2 = cantidadRegistros - 1
+if (cantidadRegistros != 0) {
+    do {
+        selector = prompt('Hay en total ' + cantidadRegistros + ' registros, Ingrese el Registro que desea vizualizar iniciando con 0 como primer registro, si desea terminar ingrese la combinacion x' )
+        if (selector > cantidadRegistros2){
+            alert('El registro no existe, hay en total ' + cantidadRegistros + ' registros, Ingrese el Registro que desea vizualizar iniciando con 0 como primer registro')
+            continue;
+        }
+        if (selector == 'x'){
+            break;
+        }else{
+            console.log(unionArrays2[selector])
+        }
+    } while (selector != 'x')
+}
