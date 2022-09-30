@@ -13,7 +13,7 @@
 
     <div class="container-fluid p-5 bg-dark text-white text-center">
         <h1>CoderHouse</h1>
-        <p>Primera entrega Proyecto Simulador</p>
+        <p>Segunda entrega Proyecto Simulador</p>
     </div>
 
     <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
@@ -38,49 +38,49 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-sm-4">
-                <h3>Temperatura en °C</h3>
+                <h4>Temperatura en °C</h4>
                 <p>Introdusca la temperatura en °C que quiere convertir...</p>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control">
-                    <button type="submit" class="btn btn-dark">Convertir</button>
-                </div>
+                <form class="container" id="formularioCelsius">
+                    <div class="input-group mb-3" id="centigrados">
+                        <input type="number" class="form-control" placeholder="°C" id="gradosCentigrados">
+                        <button type="submit" class="btn btn-dark">Convertir</button>
+                    </div>
+                </form>
                 <div>
-                    <h2>Temperaturas para interactuar con DOM</h2>
-                    <ul class="list-group">
-                        <li class="list-group-item list-group-item-item-info">23</li>
-                        <li class="list-group-item list-group-item-item-info">25</li>
-                        <li class="list-group-item list-group-item-item-info">50</li>
-                    </ul>
-                </div>
-                <div>
-                    <h2>Resultado Temperaturas para interactuar con DOM</h2>
-                    <div>
-                        <table class="table table-bordered table-sm">
-                            <thead>
-                                <tr>
-                                    <th>Temperatura Original</th>
-                                    <th>Tipo Temperatura</th>
-                                    <th>Temperatura Convertida</th>
-                                    <th>Tipo Temperatura</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tablaResultado">
+                    <h6>Resultado Temperaturas para interactuar con DOM</h6>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="tablaResultadoFahrenheit">
 
-                            </tbody>
+                        </table>
+                        <table class="table table-bordered" id="tablaResultadoKelvin">
+
                         </table>
                     </div>
                 </div>
             </div>
             <div class="col-sm-4">
-                <h3>Temperatura en °F</h3>
+                <h4>Temperatura en °F</h4>
                 <p>Introdusca la temperatura en °F que quiere convertir...</p>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="°F">
-                    <button type="button" class="btn btn-dark">Convertir</button>
+                <form class="container" id="formularioFahrenheit">
+                    <div class="input-group mb-3" id="Fahrenheit">
+                        <input type="number" class="form-control" placeholder="°F" id="gradosFahrenheit">
+                        <button type="submit" class="btn btn-dark">Convertir</button>
+                    </div>
+                </form>
+                <div>
+                    <h6>Resultado Temperaturas para interactuar con DOM</h6>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="tablaResultadoCelsius">
+
+                        </table>
+                        <table class="table table-bordered" id="tablaResultadoKelvin2">
+
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-4">
-                <h3>Temperatura en °K</h3>
+                <h4>Temperatura en °K</h4>
                 <p>Introdusca la temperatura en °K que quiere convertir...</p>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="°K">
