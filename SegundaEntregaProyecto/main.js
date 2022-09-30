@@ -262,10 +262,10 @@ const deleteTempFahrenheit = (tempFahrenheit) => {
 }
 
 const deleteTemKelvin2 = (tempKelvin2) => {
-    arrayInicialKelvin.forEach((storage2, index) => {
+    arrayInicialKelvin2.forEach((storage2, index) => {
         if (storage2.temperaturaOriginal == tempKelvin2) {
-            arrayInicialKelvin.splice(index, 1);
+            arrayInicialKelvin2.splice(index, 1);
         }
     });
-    createTableKelvin2(arrayInicialKelvin);
+    createTableKelvin2(arrayInicialKelvin2);
 }
